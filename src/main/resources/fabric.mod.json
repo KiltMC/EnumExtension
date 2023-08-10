@@ -12,6 +12,9 @@
   "icon": "assets/enumextension/icon.png",
   "environment": "*",
   "entrypoints": {
+    "mm:early_risers": [
+      "xyz.bluspring.enumextension.EEEarlyRiser"
+    ]
   },
   "mixins": [
     "enum-extension.mixins.json"

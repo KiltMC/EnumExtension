@@ -4,6 +4,8 @@
   "package": "xyz.bluspring.enumextension.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "EnchantmentCategoryAccessor",
+    "EnchantmentCategoryMixin",
     "SpawnPlacementsTypeAccessor",
     "SpawnPlacementsTypeMixin"
   ],

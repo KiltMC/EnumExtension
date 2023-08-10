@@ -10,11 +10,12 @@ import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
+import xyz.bluspring.enumextension.IExtensibleEnum;
 import xyz.bluspring.enumextension.extensions.SpawnPlacementsTypeExtension;
 import xyz.bluspring.enumextension.util.TriPredicate;
 
 @Mixin(SpawnPlacements.Type.class)
-public class SpawnPlacementsTypeMixin implements SpawnPlacementsTypeExtension {
+public class SpawnPlacementsTypeMixin implements SpawnPlacementsTypeExtension, IExtensibleEnum {
     @Unique
     private TriPredicate<LevelReader, BlockPos, EntityType<? extends Mob>> predicate;
 
