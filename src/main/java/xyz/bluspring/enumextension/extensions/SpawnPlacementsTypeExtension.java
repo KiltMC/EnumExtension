@@ -18,15 +18,19 @@ public interface SpawnPlacementsTypeExtension {
                 (values) -> SpawnPlacementsTypeAccessor.setValues(values.toArray(new SpawnPlacements.Type[0]))
         );
 
-        ((SpawnPlacementsTypeExtension) (Object) value).setPredicate(predicate);
+        ((SpawnPlacementsTypeExtension) (Object) value).enumExtension$setPredicate(predicate);
         return value;
     }
 
-    default boolean canSpawnAt(LevelReader world, BlockPos pos, EntityType<?> type) {
+    default boolean enumExtension$canSpawnAt(LevelReader world, BlockPos pos, EntityType<? extends Mob> type) {
         throw new IllegalStateException();
     }
 
-    default void setPredicate(TriPredicate<LevelReader, BlockPos, EntityType<? extends Mob>> predicate) {
+    default void enumExtension$setPredicate(TriPredicate<LevelReader, BlockPos, EntityType<? extends Mob>> predicate) {
+        throw new IllegalStateException();
+    }
+
+    default TriPredicate<LevelReader, BlockPos, EntityType<? extends Mob>> enumExtension$getPredicate() {
         throw new IllegalStateException();
     }
 }
