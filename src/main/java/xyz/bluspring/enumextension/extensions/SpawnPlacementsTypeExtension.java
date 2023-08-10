@@ -22,6 +22,10 @@ public interface SpawnPlacementsTypeExtension {
         return value;
     }
 
+    default boolean canSpawnAt(LevelReader world, BlockPos pos, EntityType<?> type) {
+        throw new IllegalStateException();
+    }
+
     default void setPredicate(TriPredicate<LevelReader, BlockPos, EntityType<? extends Mob>> predicate) {
         throw new IllegalStateException();
     }
