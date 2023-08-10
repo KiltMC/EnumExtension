@@ -1,0 +1,23 @@
+{
+  "schemaVersion": 1,
+  "id": "enum-extension",
+  "version": "${version}",
+  "name": "EnumExtension",
+  "description": "Forge's Enum Extension APIs ported to Fabric. Provides a very easy and straightforward API for additional enum extension.",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/KiltMC/EnumExtension"
+  },
+  "license": "MIT",
+  "icon": "assets/enumextension/icon.png",
+  "environment": "*",
+  "entrypoints": {
+  },
+  "mixins": [
+    "enum-extension.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "minecraft": ">=${minecraft_version}"
+  }
+}
