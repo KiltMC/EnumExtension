@@ -17,7 +17,7 @@ public class EEEarlyRiser implements Runnable {
         ClassTinkerers.addTransformation(enchantmentCategory, (classNode) -> {
             classNode.access = Opcodes.ACC_PUBLIC | Opcodes.ACC_ENUM;
 
-            var canEnchantName = mappingResolver.mapMethodName("intermediary", "net.minecraft.class_1886", "method_8177", "(Lnet/minecraft/class_1792)Z");
+            var canEnchantName = mappingResolver.mapMethodName("intermediary", "net.minecraft.class_1886", "method_8177", "(Lnet/minecraft/class_1792;)Z");
             // remove it first
             classNode.methods.removeIf(it -> it.name.equals(canEnchantName));
 
