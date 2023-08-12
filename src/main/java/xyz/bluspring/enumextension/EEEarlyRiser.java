@@ -13,15 +13,15 @@ public class EEEarlyRiser implements Runnable {
 
         var mappingResolver = FabricLoader.getInstance().getMappingResolver();
 
-        var enchantmentCategory = mappingResolver.mapClassName("intermediary", "net/minecraft/class_1886");
+        var enchantmentCategory = mappingResolver.mapClassName("intermediary", "net.minecraft.class_1886").replace(".", "/");
         ClassTinkerers.addTransformation(enchantmentCategory, (classNode) -> {
             classNode.access = Opcodes.ACC_PUBLIC | Opcodes.ACC_ENUM;
 
-            var canEnchantName = mappingResolver.mapMethodName("intermediary", "net/minecraft/class_1886", "method_8177", "(Lnet/minecraft/class_1792)Z");
+            var canEnchantName = mappingResolver.mapMethodName("intermediary", "net.minecraft.class_1886", "method_8177", "(Lnet/minecraft/class_1792)Z");
             // remove it first
             classNode.methods.removeIf(it -> it.name.equals(canEnchantName));
 
-            var item = mappingResolver.mapClassName("intermediary", "net/minecraft/class_1792").replace(".", "/");
+            var item = mappingResolver.mapClassName("intermediary", "net.minecraft.class_1792").replace(".", "/");
             var enchCategoryInjection = "xyz/bluspring/enumextension/extensions/EnchantmentCategoryExtension";
 
             // This method should become:
