@@ -6,6 +6,8 @@
   "mixins": [
     "EnchantmentCategoryAccessor",
     "EnchantmentCategoryMixin",
+    "MobCategoryAccessor",
+    "MobCategoryMixin",
     "SpawnPlacementsTypeAccessor",
     "SpawnPlacementsTypeMixin"
   ],
